@@ -2,7 +2,7 @@ import { Text, Pressable } from 'react-native'
 import React, { useCallback } from 'react'
 import { IProductDetail } from '@/service/product/Product'
 import { commonStyles } from '@/theme/CommonStyles'
-import homeStyles from '../HomeStyles'
+import homeStyles from '../../HomeStyles'
 import { navigate } from '@/navigator/utils'
 import { DETAIL_SCREEN } from '@/navigator/routeName'
 
@@ -19,6 +19,7 @@ const ProductItem = ({ item }: { item: IProductDetail }) => {
 				commonStyles.regularPadding,
 				homeStyles.itemContainer,
 			]}
+			testID="product-item"
 		>
 			<Text>{item?.title}</Text>
 		</Pressable>

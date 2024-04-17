@@ -7,6 +7,7 @@ const LoadingIndicator = () => {
 		<ActivityIndicator
 			size="large"
 			style={[commonStyles.fill, commonStyles.center]}
+			testID="loading-indicator"
 		/>
 	)
 }

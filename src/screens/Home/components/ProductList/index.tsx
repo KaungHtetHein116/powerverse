@@ -2,9 +2,8 @@ import { FlatList, Text } from 'react-native'
 import React from 'react'
 import { IProductDetail } from '@/service/product/Product'
 import { commonStyles } from '@/theme/CommonStyles'
-import homeStyles from '../HomeStyles'
-import ProductItem from './ProductItem'
-import { LoadingIndicator } from '@/components'
+import homeStyles from '../../HomeStyles'
+import ProductItem from '../ProductItem'
 
 const ProductList = ({ data }: { data?: IProductDetail[] }) => {
 	const renderItem = ({ item }: { item: IProductDetail }) => {
@@ -26,6 +25,7 @@ const ProductList = ({ data }: { data?: IProductDetail[] }) => {
 			]}
 			showsVerticalScrollIndicator={false}
 			ListEmptyComponent={renderListEmptyComponent}
+			testID="product-list"
 		/>
 	)
 }
