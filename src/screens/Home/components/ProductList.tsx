@@ -28,6 +28,7 @@ const ProductList = ({
 				commonStyles.regularTMargin,
 				homeStyles.listContainer,
 			]}
+			showsVerticalScrollIndicator={false}
 		/>
 	)
 }

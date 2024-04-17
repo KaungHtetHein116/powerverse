@@ -4,9 +4,12 @@ import { commonStyles } from '@/theme/CommonStyles'
 import homeStyles from './HomeStyles'
 import ProductList from './components/ProductList'
 import useHome from './hooks/useHome'
+import { useCheckDevice } from '@/hooks'
+import { Text } from 'react-native'
 
 const Home = () => {
 	const { data, isLoading, searchText, setSearchText } = useHome()
+	const { isEmulator } = useCheckDevice()
 
 	return (
 		<GenericTemplate
@@ -16,6 +19,13 @@ const Home = () => {
 				homeStyles.container,
 			]}
 		>
+			{isEmulator !== null && (
+				<Text style={[commonStyles.textCenter]}>
+					{`You are running on ${
+						isEmulator ? `Emulator` : `Real Device`
+					}`}
+				</Text>
+			)}
 			<SearchInput
 				value={searchText}
 				onChangeText={setSearchText}
