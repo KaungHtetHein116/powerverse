@@ -13,7 +13,7 @@ const useHome = () => {
 	const debounceTrigger = useCallback(
 		debounce((text: string) => {
 			trigger({ params: { q: text } })
-		}, 300),
+		}, 100),
 		[],
 	)
 

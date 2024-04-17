@@ -8,6 +8,7 @@ const homeStyles = StyleSheet.create({
 	},
 	listContainer: {
 		gap: moderateScale(10),
+		flexGrow: 1,
 	},
 	itemContainer: {
 		backgroundColor: AppLightColors.background,

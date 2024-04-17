@@ -1,4 +1,4 @@
-import { FlatList } from 'react-native'
+import { FlatList, Text } from 'react-native'
 import React from 'react'
 import { IProductDetail } from '@/service/product/Product'
 import { commonStyles } from '@/theme/CommonStyles'
@@ -6,18 +6,14 @@ import homeStyles from '../HomeStyles'
 import ProductItem from './ProductItem'
 import { LoadingIndicator } from '@/components'
 
-const ProductList = ({
-	data,
-	isLoading,
-}: {
-	data?: IProductDetail[]
-	isLoading: boolean
-}) => {
+const ProductList = ({ data }: { data?: IProductDetail[] }) => {
 	const renderItem = ({ item }: { item: IProductDetail }) => {
 		return <ProductItem item={item} />
 	}
 
-	if (isLoading) return <LoadingIndicator />
+	const renderListEmptyComponent = () => {
+		return <Text style={commonStyles.textCenter}>{'result not found'}</Text>
+	}
 
 	return (
 		<FlatList
@@ -29,6 +25,7 @@ const ProductList = ({
 				homeStyles.listContainer,
 			]}
 			showsVerticalScrollIndicator={false}
+			ListEmptyComponent={renderListEmptyComponent}
 		/>
 	)
 }

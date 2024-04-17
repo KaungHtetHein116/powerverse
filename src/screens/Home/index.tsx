@@ -1,5 +1,5 @@
 import React from 'react'
-import { GenericTemplate, SearchInput } from '@/components'
+import { GenericTemplate, LoadingIndicator, SearchInput } from '@/components'
 import { commonStyles } from '@/theme/CommonStyles'
 import homeStyles from './HomeStyles'
 import ProductList from './components/ProductList'
@@ -10,6 +10,8 @@ import { Text } from 'react-native'
 const Home = () => {
 	const { data, isLoading, searchText, setSearchText } = useHome()
 	const { isEmulator } = useCheckDevice()
+
+	if (isLoading) return <LoadingIndicator />
 
 	return (
 		<GenericTemplate
@@ -33,7 +35,7 @@ const Home = () => {
 				placeholder="iPhone 15"
 				style={[commonStyles.regularBMargin]}
 			/>
-			<ProductList data={data?.products} isLoading={isLoading} />
+			<ProductList data={data?.products} />
 		</GenericTemplate>
 	)
 }
