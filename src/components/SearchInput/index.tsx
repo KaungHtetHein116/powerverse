@@ -3,6 +3,7 @@ import React from 'react'
 import { ISearchInput } from './SearchInput'
 import searchInputStyles from './SearchInputStyles'
 import { commonStyles } from '@/theme/CommonStyles'
+import { AppLightColors } from '@/theme/Variable'
 
 const SearchInput = ({ label, style, ...props }: ISearchInput) => {
 	return (
@@ -13,6 +14,7 @@ const SearchInput = ({ label, style, ...props }: ISearchInput) => {
 					commonStyles.regularHPadding,
 					searchInputStyles.inputContainer,
 				]}
+				placeholderTextColor={AppLightColors.lowEmphasis}
 				{...props}
 			/>
 		</View>
